@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+
+* {
+    box-sizing: inherit;
+    text-align: center;
+}
+.container {
+    border:2px solid black;
+    width:80%;
+    height:40%;  
+    margin:0 auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding:1.5rem;
+}
+
+.date-container {
+    display:flex;
+}
+
+form {
+    text-align: start;
+    font-size:2rem;
+}
+
+.input {
+    text-align: start;
+}
+
+.input-name {
+    width:80%;
+    font-size:2rem;
+    margin-left:1rem;
+}
+
+.input-date {
+    margin-left:1rem;
+    font-size:2rem;
+}
+
+.input-amount {
+    margin-top:2rem;
+    font-size:2rem;
+    width:40%;
+    margin-left:0.7rem;
+}
+
+
+.date-amount {
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+
+table {
+    padding:1rem;
+    margin:0 auto;
+    font-size:24px;
+}

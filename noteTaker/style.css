@@ -1,0 +1,114 @@
+body {
+    text-align:center;
+    padding:0.4rem;
+}
+
+h1 {
+    font-size:5rem;
+}
+
+.container-tudo {
+    width:90%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container-input {
+    font-size:1rem;
+    text-align: start;
+
+}
+
+.note-input {
+    width:95%;
+    line-height: 3;
+}
+
+.add-button {
+    font-size:2rem;
+    background-color: green;
+    color:white;
+    border-radius:6px;
+    width:10%;
+    align-self: center;
+}
+
+.container-detail-item {
+    font-size:1rem;
+    background-color: green;
+    color:white;
+    border-radius:6px;
+    width:10%;
+}
+
+.container-lista {
+    margin-top: 1rem;
+}
+
+.container-item {
+    padding:10px;
+    text-align:start;
+    border-radius: 6px;
+    border:3px solid lightgrey;
+}
+
+.container-item p {
+    font-size:1rem;
+    padding-left: 5px;
+}
+
+.container-modal {
+    height:100%;
+    width:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity:0;
+    visibility:hidden;
+    transform:scale(1.1);
+}
+
+.show-modal {
+    opacity:1;
+    visibility: visible;
+    transform:scale(1.0);
+    transition:visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+    align-self: flex-end;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.container-modal-text {
+    width:80%;
+    height:30%;
+    background-color: white;
+    margin:35vh auto;
+    text-align:start;
+    font-size:1.3rem;
+    padding:14px;
+   
+}

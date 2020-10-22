@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toDo List</title>
+  </head>
+  <body>
+    <div class="outer-container">
+      <h1>To do List</h1>
+      <div class="inner-container">
+        <input type="text" id="addinput" />
+        <button id="addButton">add</button>
+      </div>
+    </div>
+    <div class="outer-list">
+      <h2>List of things to do:</h2>
+      <div class="printer">
+        <ul class="list"></ul>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const toDoList = ['doing projects', 'making food'];
+
+    const list = document.querySelector('.list');
+    const addButton = document.getElementById('addButton');
+
+
+    function addNote() {
+      const value = document.getElementById('addinput').value;
+      if (!value) {
+        return;
+      }
+      toDoList.push(value);
+      const div = document.createElement('div');
+      div.classList.add('note-container');
+      const li = document.createElement('li');
+      li.innerHTML = value;
+      div.appendChild(li);
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('remove-button');
+      removeButton.innerHTML = 'remove';
+      div.appendChild(removeButton);
+      list.appendChild(div);
+      const input = document.getElementById('addinput');
+      input.value = '';
+    }
+
+    // function print() {
+    //   toDoList.forEach((note) => {
+    //     const div = document.createElement('div');
+    //     div.classList.add('note-container');
+    //     const li = document.createElement('li');
+    //     li.innerHTML = note;
+    //     const removeButton = document.createElement('button');
+    //     removeButton.innerHTML = 'remove';
+    //     div.appendChild(li);
+    //     div.appendChild(removeButton);
+    //     list.appendChild(div);
+    //   });
+    // }
+
+    function handlingRemove(e) {
+      console.log(e.target);
+      if (e.target.classList.contains('remove-button')) {
+        e.target.parentNode.remove();
+      }
+    }
+
+    addButton.addEventListener('click', addNote);
+    document.addEventListener('click', handlingRemove);
+  </script>
+  <style>
+    * {
+      margin: auto;
+      text-align: center;
+      padding:0.3rem;
+    }
+    .outer-container {
+      margin-top: 20vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 20vh;
+      width: 40vw;
+    }
+
+    input {
+      padding-bottom: 4px;
+      height: 3vh;
+      border-radius: 6px;
+    }
+
+    .inner-container {
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .printer {
+      display: flex;
+      width: 50%;
+    }
+
+    button {
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    li {
+      padding-top: 4px;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    .outer-list {
+      border: 2px solid black;
+      width: 30vw;
+    }
+
+    .note-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin-top:3rem;
+    }
+  </style>
+</html>
